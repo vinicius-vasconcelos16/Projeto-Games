@@ -7,11 +7,13 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Listagem de Jogos</title>
  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
 </head>
 
 <body>
  <?php 
    require_once "includes/banco.php";
+   require_once 'includes/login.php';
    require_once "includes/funcoes.php";
    
  ?>
@@ -62,7 +64,7 @@
       } else{
         while($reg=$busca->fetch_object()){
          echo "<tr><td><img src='fotos/$reg->capa' alt='fotos/indisponivel.png' class='imagem';>";
-         echo "<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a> [$reg->genero] <br>$reg->produtora";
+         echo "<td><a href='detalhes.php?cod=$reg->cod' id='nome_jogo'>$reg->nome</a> [$reg->genero] <br><br><span id='produtora'>$reg->produtora</span>";
          echo "<td>Adm<br>";
         }
      }

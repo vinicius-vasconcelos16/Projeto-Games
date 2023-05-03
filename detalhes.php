@@ -6,16 +6,18 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Listagem de Jogos</title>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/> 
  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
  <?php 
+   require_once 'includes/login.php';
    require_once "includes/banco.php";
    require_once "includes/funcoes.php";
  ?>
  <div id="corpo">
-  <?php 
+  <?php
     $cod = $_GET["cod"] ?? 0;
     $busca = $banco->query("select * from jogos where cod='$cod'");
     include_once "includes/topo.php";
@@ -43,7 +45,7 @@
    ?>
   </table>
   <br>
-  <a href="index.php" target="__self"><img src="icones/icoback.png" alt="icone-voltar"></a>
+  <a href="index.php" target="__self"><span class="material-symbols-outlined"  style="zoom: 210%">chevron_left</span></a>
  </div>
  <br>
  <?php 
