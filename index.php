@@ -63,7 +63,7 @@
        echo "Nenhum registro encontrado";
       } else{
         while($reg=$busca->fetch_object()){
-         echo "<tr><td><img src='fotos/$reg->capa' alt='fotos/indisponivel.png' class='imagem';>";
+         echo "<tr><td><a href='detalhes.php?cod=$reg->cod' id='nome_jogo'><img src='fotos/$reg->capa' alt='fotos/indisponivel.png' class='imagem';></a>";
          echo "<td><a href='detalhes.php?cod=$reg->cod' id='nome_jogo'>$reg->nome</a> [$reg->genero] <br><br><span id='produtora'>$reg->produtora</span>";
          echo "<td>Adm<br>";
         }

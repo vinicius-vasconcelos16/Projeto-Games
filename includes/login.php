@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
 <link rel="stylesheet" href="../style.css">
 <?php 
+ 
+ include_once 'funcoes.php';
  session_start();
  if (!isset($_SESSION['user']))
  {
@@ -9,12 +11,13 @@
     $_SESSION['tipo'] = "";
  }
 
- include_once 'funcoes.php';
  function cripto($senha){
-  for($pos=0;$pos<strlen($senha);$pos++){
+   $c = '';
+   for($pos=0;$pos<strlen($senha);$pos++){
    $letra = ord($senha[$pos]) + 1;
-   return chr($letra);
+   $c .= chr($letra);
   }
+  return $c;
  }
 
  function gerarHash($senha){
@@ -23,21 +26,9 @@
   return $hash;
  }
  
- function testarHash($senha,$hash){
-  for($pos=0;$pos<strlen($senha);$pos++){ 
-   $senha = ord($senha[$pos]) + 1;
-   $senha = chr($senha);
-  }
-  $teste = password_verify($senha,$hash);
-  if(!$teste==1){
-   $teste = msg_erro("Senha Incorreta");
-  }
-  else{
-   $teste = "";
-  }
-  return $teste;
+ function testarHash($senha, $hash){
+   $ok = password_verify(cripto($senha), $hash);
+   return $ok;
  }
-
-
 
 ?>

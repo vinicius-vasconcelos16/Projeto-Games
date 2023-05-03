@@ -39,7 +39,7 @@
     }else{
       if($busca->num_rows > 0){
        $reg = $busca->fetch_object();
-       if(testarHash($senha,$reg->senha)){
+       if(testarHash($senha, $reg->senha)){
         echo msg_sucesso("Logado com Sucesso!");
         $_SESSION['user'] = $reg->usuario;
         $_SESSION['nome'] = $reg->nome;
@@ -53,7 +53,7 @@
     }
    }
   ?>
-  <a href="index.php" target="__self"><span class="material-symbols-outlined"  style="zoom: 210%">chevron_left</span></a>
+  <a href="index.php" target="_self"><span class="material-symbols-outlined"  style="zoom: 210%">chevron_left</span></a>
  </div>
 </body>
 </html>

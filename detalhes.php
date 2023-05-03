@@ -8,6 +8,11 @@
  <title>Listagem de Jogos</title>
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/> 
  <link rel="stylesheet" href="style.css">
+ <style>
+  div#corpo{
+    width: 40vw;
+  }
+ </style>
 </head>
 
 <body>
@@ -35,7 +40,7 @@
           echo "<td><h2>$reg->nome</h2>";
           echo "<h3 style='margin-bottom: 10px;'><strong>Nota: ".number_format($reg->nota,1)." / 10</strong></h3>";
           echo "<tr>";
-          echo "<td style='font-size: 0.9em;'>$reg->descricao";
+          echo "<td style='font-size: 1.1em;'>$reg->descricao";
           echo "<tr>";
           echo "<td>Adm";
         } else{
@@ -45,7 +50,7 @@
    ?>
   </table>
   <br>
-  <a href="index.php" target="__self"><span class="material-symbols-outlined"  style="zoom: 210%">chevron_left</span></a>
+  <a href="index.php" target="_self"><span class="material-symbols-outlined"  style="zoom: 210%">chevron_left</span></a>
  </div>
  <br>
  <?php 
