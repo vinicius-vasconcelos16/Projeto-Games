@@ -31,7 +31,7 @@
     <a href="index.php?ind=maior&buscar=<?=$buscar?>">Maior Nota</a> | 
     <a href="index.php?ind=menor&buscar=<?=$buscar?>">Menor Nota</a> | 
     <a href="index.php?">Mostrar Todos</a> | 
-    Buscar: <input type="text" name="buscar" id="text-box" maxlength="30" size="10" value="<?=$buscar?>"><input type="submit" value="Ok" id="ok">
+    Buscar: <input type="text" name="buscar" id="text-box" maxlength="30" size="10" value="<?=$buscar?>"><input type="submit" value="Ok" class="ok">
   </form>
   <table class="listagem">
     <?php
@@ -65,7 +65,12 @@
         while($reg=$busca->fetch_object()){
          echo "<tr><td><a href='detalhes.php?cod=$reg->cod' id='nome_jogo'><img src='fotos/$reg->capa' alt='fotos/indisponivel.png' class='imagem';></a>";
          echo "<td><a href='detalhes.php?cod=$reg->cod' id='nome_jogo'>$reg->nome</a> [$reg->genero] <br><br><span id='produtora'>$reg->produtora</span>";
-         echo "<td>Adm<br>";
+         if (is_admin()){
+          echo "<span id='editors'><span class='material-symbols-outlined'>add_circle</span><span class='material-symbols-outlined'>edit</span><span class='material-symbols-outlined'>delete</span></span>";
+         } elseif(is_editor()){
+          echo "<span id='editors'><span class='material-symbols-outlined'>edit</span></span>";
+         }
+         
         }
      }
     }

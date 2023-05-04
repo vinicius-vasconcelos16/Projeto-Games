@@ -10,7 +10,7 @@
  <link rel="stylesheet" href="style.css">
  <style>
   div#corpo{
-    width: 40vw;
+    width: 90vw;
   }
  </style>
 </head>
@@ -39,6 +39,11 @@
           echo "<td rowspan='3' style='vertical-align: top;'><img src='fotos/$reg->capa' alt='fotos/indisponivel.png' width='280vw' height='320vh' style='margin-right: 20px;'>";
           echo "<td><h2>$reg->nome</h2>";
           echo "<h3 style='margin-bottom: 10px;'><strong>Nota: ".number_format($reg->nota,1)." / 10</strong></h3>";
+          if (is_admin()){
+            echo "<span id='editors' style='float: left;'><span class='material-symbols-outlined'>add_circle</span><span class='material-symbols-outlined'>edit</span><span class='material-symbols-outlined'>delete</span></span>";
+          } elseif(is_editor()){
+            echo "<span id='editors'><span class='material-symbols-outlined'>edit</span></span>";
+           }
           echo "<tr>";
           echo "<td style='font-size: 1.1em;'>$reg->descricao";
           echo "<tr>";
@@ -47,10 +52,11 @@
           echo "<tr><td>Nenhum registro encontrado";
         }
       }
+      
    ?>
   </table>
   <br>
-  <a href="index.php" target="_self"><span class="material-symbols-outlined"  style="zoom: 210%">chevron_left</span></a>
+  <a href="index.php" target="_self"><span class="material-symbols-outlined back"  style="zoom: 210%">chevron_left</span></a>
  </div>
  <br>
  <?php 

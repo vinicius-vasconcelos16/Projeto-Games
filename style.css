@@ -69,10 +69,15 @@ table.detalhes{
  
 }
 
+.back:hover{
+ cursor: pointer;
+ border-radius: 90px;
+ background-color: rgba(211, 211, 211, 0.534);
+ transition: background-color .9s;
+}
 .material-symbols-outlined:hover{
  cursor: pointer;
- border-radius: 15px;
- background-color: rgba(211, 211, 211, 0.534);
+ border-radius: 90px;
  transition: background-color .9s;
 }
 
@@ -89,7 +94,7 @@ img.imagem:hover{
 
 }
 
-input#ok:hover{
+input.ok:hover{
  cursor: pointer;
 }
 
@@ -151,4 +156,15 @@ div.msg_erro{
 .material-symbols-outlined{
  vertical-align: bottom;
  margin-right: 5px;
+}
+
+#editors{
+ float: right;
+ margin-bottom: 20px;
+ padding: 10px;
+ color: black;
+ background-color: rgba(48, 196, 48, 0.8);
+ border-radius: 20px;
+ border: 2px solid black;
+ box-shadow: 0px 0px 5px rgba(0,0,0,.5);
 }

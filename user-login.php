@@ -44,16 +44,23 @@
         $_SESSION['user'] = $reg->usuario;
         $_SESSION['nome'] = $reg->nome;
         $_SESSION['tipo'] = $reg->tipo;
+        echo "<a href='index.php' target='_self'><span class='material-symbols-outlined back'  style='zoom: 210%'>chevron_left</span></a>";
        } else{
         echo msg_erro("Usuário ou Senha inválido(s)!");
+        echo "<a href='user-login.php' target='_self'><span class='material-symbols-outlined back'  style='zoom: 210%'>chevron_left</span></a>";
        }
       } else{
-       echo "Usuário não cadastrado!";
+        echo msg_erro("Usuário não cadastrado!");
+        echo "<a href='user-login.php' target='_self'><span class='material-symbols-outlined back'  style='zoom: 210%'>chevron_left</span></a>";        
       }
     }
    }
   ?>
-  <a href="index.php" target="_self"><span class="material-symbols-outlined"  style="zoom: 210%">chevron_left</span></a>
+  
  </div>
+ <br>
+ <?php 
+  include_once "includes/rodape.php";
+ ?>
 </body>
 </html>
